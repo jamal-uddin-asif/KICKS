@@ -2,7 +2,7 @@ import React from 'react';
 import { FaArrowRightArrowLeft } from 'react-icons/fa6';
 import { MdKeyboardArrowRight } from 'react-icons/md';
 import Container from '../Shared/Container';
-import CategoryCard from '../Cards/CategoryCard';
+import CategoryCard, { Category } from '../Cards/CategoryCard';
 
 const CategorySection =async () => {
     const res = await fetch('https://api.escuelajs.co/api/v1/categories')
@@ -22,9 +22,9 @@ const CategorySection =async () => {
                 </div>
             </div>
                 </Container>
-            <div className='text-white  grid grid-cols-1 md:grid-cols-2'>
+            <div className='text-white ml-4 md:ml-10 rounded-tl-4xl bg-gray-100  grid grid-cols-1 md:grid-cols-2'>
                 {
-                    categories.map((category)=> <CategoryCard key={category.id} category={category}/>)
+                    categories.map((cate:Category)=> <CategoryCard key={cate.id}  cate={cate}/>)
                 }
             </div>
         
