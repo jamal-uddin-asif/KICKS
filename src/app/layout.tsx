@@ -4,6 +4,8 @@ import "./globals.css";
 import Header from "@/Components/Shared/Header";
 import DoItRight from "@/Components/DoItRight";
 import Banner from "@/Components/Home/Banner";
+import Products from "@/Components/Home/Products";
+import CategorySection from "@/Components/Home/CategorySection";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -22,7 +24,6 @@ export const metadata: Metadata = {
 
 export const rubik = Rubik({
   weight: ['300','400', '500', '600']
-
 })
 
 export default function RootLayout({
@@ -43,6 +44,12 @@ export default function RootLayout({
           <section>
             <Banner/>
           </section>
+          <section>
+            <Products/>
+          </section>
+         <section>
+          <CategorySection/>
+         </section>
           {children}
         </main>
       </body>
