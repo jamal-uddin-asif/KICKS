@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Header from "@/Components/Shared/Header";
+import DoItRight from "@/Components/DoItRight";
+import Banner from "@/Components/Home/Banner";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -25,13 +27,19 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className=''
-      >
+      <body className="bg-[#E7E7E3]">
         <header className="w-full absolute top-8">
           <Header />
         </header>
-        {children}
+        <main className="mt-40">
+          <section>
+            <DoItRight />
+          </section>
+          <section>
+            <Banner/>
+          </section>
+          {children}
+        </main>
       </body>
     </html>
   );
